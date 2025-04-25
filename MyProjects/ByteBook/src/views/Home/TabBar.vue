@@ -1,6 +1,9 @@
 <template>
     <div>
-shopping
+     TabBar.vue
+     <van-tabbar>
+        
+     </van-tabbar>
     </div>
 </template>
 

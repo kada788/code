@@ -1,5 +1,5 @@
 <template>
-     <van-tabbar v-model="active" 
+  <van-tabbar v-model="active" 
   class=" shadow-black shadow-2xl opacity-90"
   >
     <van-tabbar-item to="/assistant">
@@ -14,27 +14,11 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted } from "vue";
-import { useRoute } from "vue-router";
+import { ref } from "vue";
+import { useRouter } from "vue-router";
 
-const  active = ref<number>(0);
-onMounted(() => {
-  const route = useRoute();
-  if (route.path == "/assistant") {
-    active.value = 0;
-  } else if (route.path == "/home") {
-    active.value = 1;
-  } else if (route.path == "/shopping") {
-    active.value = 2;
-  } else if (route.path == "/mine") {
-    active.value = 3;
-  }
-});
-
-
-
+const router = useRouter();
+const active = ref<number>(1);
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>
