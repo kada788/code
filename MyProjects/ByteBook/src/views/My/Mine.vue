@@ -2,7 +2,7 @@
 <div class="mine h-100rem">
   <!-- 头部 -->
   <div
-      class="minePage container h-[8rem] relative bg-[url(https://p6-novel.byteimg.com/origin/novel-static/3f7b5f33f2d161ef319057869d0fa3e9)] bg-cover bg-center"
+      class="minePage container h-[8rem] relative bg-[url(https://lf-fe.fqnovelstatic.com/obj/novel-fanqie-fe/toutiao/muye/4690808c10dccb6d1476d0bbcb7f2ede.png)] bg-cover bg-center"
     >
     <div class="text-center text-lg text-white font-bold pt-[2rem]">
       个人中心
@@ -56,10 +56,11 @@
               class="iconfont "
               class-prefix="icon"
               :name="item.icon"
-              size="2rem"
+              size="1.5rem"
+              color="#FFD700"
               />
              </div>
-             <div class="topbar-item-text">
+             <div class="topbar-item-text text-sm">
              {{item.title}}
              </div>
        </div>
