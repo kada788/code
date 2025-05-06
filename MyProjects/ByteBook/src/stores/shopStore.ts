@@ -33,7 +33,7 @@ export const useShopStore = defineStore('shop', () => {
                     type: '2',
                     title: '十日终焉',
                     writer: '杀虫队队员',
-                    image_url: 'https://p3-reading-sign.fqnovelpic.com/novel-pic/4900f950c7af7f82fdc14cf528e0e288~tplv-resize:225:0.image?lk3s=5b7047ff&x-expires=1746262127&x-signature=bxLrHDlebxwVSMHfogI54AVN5qM%3D',
+                    image_url: 'https://p9-reading-sign.fqnovelpic.com/novel-pic/4900f950c7af7f82fdc14cf528e0e288~tplv-resize:225:0.image?lk3s=5b7047ff&x-expires=1746984094&x-signature=BNWNBjFtWhzdtPvcksNkzGJ%2BisY%3D',
                     state: '已完结 · 249.6万字',
                     introduce: '（不后宫，不套路，不无敌，不系统，不无脑，不爽文，介意者慎入。）',
                     pubication_time: '2025-03-22 17:00'
