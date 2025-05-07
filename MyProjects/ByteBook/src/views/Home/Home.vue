@@ -72,7 +72,9 @@
                     </div>
                 </div>
             </div>
-                </wc-waterfall>
+            <van-cell v-for="item in items" :key="item" title=" " />
+            <van-back-top right="5vw" bottom="10vh"/>
+        </wc-waterfall>
              </div>
             
 
@@ -83,89 +85,10 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 const value = ref('')
-const images = [
-      'https://p6-novel.byteimg.com/origin/novel-static/6587a6b0478882c571b9a59dd1a1420b',
-      'https://p6-novel.byteimg.com/large/novel-static/ad752ad652a65e3dce4d8754b0acc43c',
-      'https://p6-novel.byteimg.com/origin/novel-static/3f7b5f33f2d161ef319057869d0fa3e9',
-      'https://p6-novel.byteimg.com/origin/novel-static/88c97a9199368ee97e10c776121da9a5',
-    
-    ];
+import { useHomeStore } from '@/stores/homeStore';
+const homeStore =  useHomeStore();
+const { images,newBooks,items } = homeStore;
 
-// 新书数据
-const newBooks = [
-    {
-        title: '金总，太太又带小姐离家出走了！',
-        cover: '../assets/HOME_PICTURES/p1.png',
-        tags: ['总裁', 'HE']
-    },
-    {
-        title: '我，圈钱主播！但大哥是真刷啊！',
-        cover: './assets/2.jpg',
-        tags: ['都市', '系统']
-    },
-    {
-        title: '喝着啤酒撸着串，这是千亿总裁？',
-        cover: './assets/3.jpg',
-        tags: ['都市脑洞']
-    },
-    {
-        title: '穿成大佬恶毒前妻后，被全家团宠',
-        cover: './assets/4.jpg',
-        tags: ['年代', '甜宠']
-    }
-]
-const items = [
-    {
-        image: 'https://p9-reading-sign.fqnovelpic.com/novel-pic/4900f950c7af7f82fdc14cf528e0e288~tplv-resize:225:0.image?lk3s=5b7047ff&x-expires=1746984094&x-signature=BNWNBjFtWhzdtPvcksNkzGJ%2BisY%3D',
-        introduce: '趁青梅憧憬，忍悠她做老婆【重生+青梅校花+恋爱日常+狗粮+单女主】身患绝症的她，重生回到高中时代...',
-        tags: '重生 青梅 校园'
-    },
-    {
-        image: 'https://p9-reading-sign.fqnovelpic.com/novel-pic/4900f950c7af7f82fdc14cf528e0e288~tplv-resize:225:0.image?lk3s=5b7047ff&x-expires=1746984094&x-signature=BNWNBjFtWhzdtPvcksNkzGJ%2BisY%3D',
-        introduce: '趁青梅憧憬，忍悠她做老婆【重生+青梅校花+恋爱日常+狗粮+单女主】身患绝症的她，重生回到高中时代...',
-        tags: '重生 青梅 校园'
-    },
-     {
-        image: 'https://p6-novel.byteimg.com/origin/novel-static/6587a6b0478882c571b9a59dd1a1420b',
-        introduce: '趁青梅憧憬，忍悠她做老婆【重生+青梅校花+恋爱日常+狗粮+单女主】身患绝症的她，重生回到高中时代...',
-        tags: '重生 青梅 校园'
-    },
-     {
-        image: 'https://p6-novel.byteimg.com/origin/novel-static/6587a6b0478882c571b9a59dd1a1420b',
-        introduce: '趁青梅憧憬，忍悠她做老婆【重生+青梅校花+恋爱日常+狗粮+单女主】身患绝症的她，重生回到高中时代...',
-        tags: '重生 青梅 校园'
-    },
-     {
-        image: 'https://p3-reading-sign.fqnovelpic.com/novel-pic/p2o168b928cbf2c9cfc82fb3a14289f1eac~tplv-resize:225:0.image?lk3s=5b7047ff&x-expires=1746348294&x-signature=2mjLXkbpkFLiZaKlZ3Q1FQd5MT8%3D',
-        introduce: '趁青梅憧憬，忍悠她做老婆【重生+青梅校花+恋爱日常+狗粮+单女主】身患绝症的她，重生回到高中时代...',
-        tags: '重生 青梅 校园'
-    },
-     {
-        image: 'https://p3-reading-sign.fqnovelpic.com/novel-pic/p2o168b928cbf2c9cfc82fb3a14289f1eac~tplv-resize:225:0.image?lk3s=5b7047ff&x-expires=1746348294&x-signature=2mjLXkbpkFLiZaKlZ3Q1FQd5MT8%3D',
-        introduce: '趁青梅憧憬，忍悠她做老婆【重生+青梅校花+恋爱日常+狗粮+单女主】身患绝症的她，重生回到高中时代...',
-        tags: '重生 青梅 校园'
-    },
-     {
-        image: 'https://p3-reading-sign.fqnovelpic.com/novel-pic/p2o168b928cbf2c9cfc82fb3a14289f1eac~tplv-resize:225:0.image?lk3s=5b7047ff&x-expires=1746348294&x-signature=2mjLXkbpkFLiZaKlZ3Q1FQd5MT8%3D',
-        introduce: '趁青梅憧憬，忍悠她做老婆【重生+青梅校花+恋爱日常+狗粮+单女主】身患绝症的她，重生回到高中时代...',
-        tags: '重生 青梅 校园'
-    },
-     {
-        image: 'https://p3-reading-sign.fqnovelpic.com/novel-pic/p2o168b928cbf2c9cfc82fb3a14289f1eac~tplv-resize:225:0.image?lk3s=5b7047ff&x-expires=1746348294&x-signature=2mjLXkbpkFLiZaKlZ3Q1FQd5MT8%3D',
-        introduce: '趁青梅憧憬，忍悠她做老婆【重生+青梅校花+恋爱日常+狗粮+单女主】身患绝症的她，重生回到高中时代...',
-        tags: '重生 青梅 校园'
-    },
-     {
-        image: 'https://p3-reading-sign.fqnovelpic.com/novel-pic/p2o168b928cbf2c9cfc82fb3a14289f1eac~tplv-resize:225:0.image?lk3s=5b7047ff&x-expires=1746348294&x-signature=2mjLXkbpkFLiZaKlZ3Q1FQd5MT8%3D',
-        introduce: '趁青梅憧憬，忍悠她做老婆【重生+青梅校花+恋爱日常+狗粮+单女主】身患绝症的她，重生回到高中时代...',
-        tags: '重生 青梅 校园'
-    },
-     {
-        image: 'https://p3-reading-sign.fqnovelpic.com/novel-pic/p2o168b928cbf2c9cfc82fb3a14289f1eac~tplv-resize:225:0.image?lk3s=5b7047ff&x-expires=1746348294&x-signature=2mjLXkbpkFLiZaKlZ3Q1FQd5MT8%3D',
-        introduce: '趁青梅憧憬，忍悠她做老婆【重生+青梅校花+恋爱日常+狗粮+单女主】身患绝症的她，重生回到高中时代...',
-        tags: '重生 青梅 校园'
-    }
-]
 </script>
 
 <style scoped>
